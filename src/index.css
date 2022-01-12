@@ -6,7 +6,7 @@
 }
 .nav-main {
   display: flex;
-  background-color: #fff  ;
+  background-color: #ccc;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -84,7 +84,7 @@ main > :first-child {
   align-items: center;
 }
 .product-ul > * {
-  border: 1px red solid;
+  /* border: 1px red solid; */
   width: 400px;
   height: 400px;
 }
@@ -103,3 +103,11 @@ main > :first-child {
   justify-content: center;
   align-items: center;
 }
+.main {
+  margin: 80px;
+}
+/* .product,
+.product-li,
+.product-ul {
+  transition: all 1s;
+} */
