@@ -13,15 +13,15 @@ const Products = () => {
     };
     req();
   }, []);
-  console.log("state issssssssss........", state);
   return (
-    <div>
+    <div className="product">
       <h1>Products</h1>
       <ul className="product-ul">
         {state.map((data) => (
-          <li>
-            <h6>{data.title}</h6>
+          <li className="product-li">
             <img src={data.image} alt="" className="product-image" />
+            <p>{data.title}</p>
+            <p>{data.price} $</p>
           </li>
         ))}
       </ul>

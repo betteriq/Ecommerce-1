@@ -83,3 +83,18 @@ main > :first-child {
   width: 400px;
   height: 400px;
 }
+
+.product-li{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
+}
+.product{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
