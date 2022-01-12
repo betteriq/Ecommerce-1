@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-const Products = () => {
+const Products = ({ setfilter, filter, loading, setloading }) => {
   const [state, setstate] = useState([]);
-  const [filter, setfilter] = useState([]);
-  const [loading, setloading] = useState(false);
+
   useEffect(() => {
     const req = async () => {
       // setloading(false)

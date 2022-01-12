@@ -11,7 +11,7 @@ const Main = () => {
         <hr />
       </div>
       <button> one</button>
-      <Products/>
+      <Products filter={filter} setfilter={setfilter} loading={loading} setloading={setloading}/>
     </main>
   );
 };
