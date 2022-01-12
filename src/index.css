@@ -1,5 +1,50 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+.nav-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: 12vh;
+}
+.atn {
+  padding: 0.5rem 2rem;
+  text-decoration: none;
+}
+.btn {
+  background-color: rgb(158, 148, 154);
+  padding: 0.5rem 2rem;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 7px;
+  transition: all 0.5s;
+}
+.btn:hover {
+  background-color: rgb(71, 66, 69);
+  color: #fff;
+  font-weight: 400px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}
+.nav-second {
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.header {
+  background: url("./images/suits.jpg");
+  background-size: cover;
+  height: 88vh;
+  width: 100%;
 }
