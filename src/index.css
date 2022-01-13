@@ -96,8 +96,10 @@ main > :first-child {
   justify-content: space-between;
   align-items: center;
   margin: 1rem;
+  flex-wrap: wrap;
   margin-bottom: 1.5rem;
   height: 23rem;
+  width: 23rem;
 }
 .products {
   display: flex;

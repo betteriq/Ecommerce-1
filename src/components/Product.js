@@ -1,39 +1,39 @@
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 
 const Product = (props) => {
-  const [state, setstate] = useState();
-  const [loading, setloading] = useState(false);
-  console.log("prooooooooooooooooo");
+  const [product, setProduct] = useState([]);
+  const [loading, setloading] = useState(true);
+  
   const { id } = useParams();
   useEffect(() => {
-    console.log("ddddddddddddddd");
-    // console.log(id);
 
-    fetch("https://fakestoreapi.com/products/1")
+    fetch(`https://fakestoreapi.com/products/${id}`)
       .then((response) => response.json())
       .then((data) => {
-        setloading(true);
-        setstate(data);
-        console.log("gggggggggg");
+        setProduct(data);
+        setloading(false);
+      
       })
-      .catch((err) => console.log("errrrrorr"));
+      .catch((err) => console.log("Fetch error"));
+
+      
   }, []);
 
   return (
     <div className="product">
+      
+      <h1>product id is: {id}</h1>
       {!loading &&
-        state.map((data) => (
-          <div>
+          <div key={product.id}>
             <p>Hi there</p>
-            <img src={data.image} alt="image doesnt show" />
-            <p>{data.price}</p>
-            <p>{data.category}</p>
+            <img src={product.image} alt="image doesnt show" />
+            <p>{product.price}</p>
+            <p>{product.category}</p>
             <h1>relooo</h1>
           </div>
-        ))}
+}
+        
     </div>
   );
 };
