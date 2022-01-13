@@ -1,17 +1,25 @@
-import React from 'react'
+import React from "react";
+import { connect } from "react-redux";
+import {AddtoCart} from "./components/AddtoCart/AddtoCart"
+const Container = (props) => {
+  return (
+    <div>
+      <h1>Numbers {props.numbers}</h1>
+      <button onClick={()=>props.Reducer}>Click me</button>
+    </div>
+  );
+};
 
-const Container = () => {
-    return (
-        <div>
-            <h1>Numbers </h1>
-            <button>Click me</button>
-        </div>
-    )
-}
+const mapStateToProps = (state) => {
+  return {
+    numbers: state.numbers,
+  };
+};
 
-const 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    Reducer: () => dispatch(AddtoCart()),
+  };
+};
 
-
-
-
-export default Container
+export default connect(mapStateToProps,mapDispatchToProps)(Container);
