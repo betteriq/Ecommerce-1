@@ -32,6 +32,7 @@
   background-color: rgb(71, 66, 69);
   color: #fff;
   font-weight: 400px;
+  cursor: pointer;
 }
 .container {
   display: flex;
@@ -72,42 +73,52 @@ main > :first-child {
   border: red solid 1px;
   width: 50rem;
 }
-.product-image {
+.products-image {
   width: 10rem;
   height: 15rem;
 }
-.product-ul {
+.products-ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
-.product-ul > * {
+.products-ul > * {
   /* border: 1px red solid; */
   width: 400px;
   height: 400px;
 }
 
-.product-li {
+.products-li {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   margin: 1rem;
-  height: 20rem;
+  margin-bottom: 1.5rem;
+  height: 23rem;
 }
-.product {
+.products {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .main {
-  margin: 80px;
+  margin: 60px;
 }
-/* .product,
-.product-li,
-.product-ul {
-  transition: all 1s;
-} */
+
+.product{
+  background-color: rgb(183, 183, 194);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.product img{
+  width: 30rem;
+  height: 30rem;
+}
