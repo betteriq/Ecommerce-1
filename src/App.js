@@ -7,11 +7,20 @@ import Product from "./components/Product";
 import About from "./components/About";
 import Container from "./Container";
 import { Provider } from "react-redux";
-import store from "./components/AddtoCart/Create"
+import store from "./components/AddtoCart/Create";
 function App() {
   return (
     <Provider store={store}>
       <div className="container">
+        <Navbar />
+
+        <Switch>
+          <Route path="/" component={Home} exact />
+          <Route path="/home" component={Home} exact />
+          <Route path="/products" component={Products} exact />
+          <Route path="/products/:id" component={Product} />
+          <Route path="/about" component={About} exact/>
+        </Switch>
         <Container />
       </div>
     </Provider>
