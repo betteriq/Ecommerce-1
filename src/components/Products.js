@@ -1,31 +1,29 @@
 import React, { useEffect, useState } from "react";
-
+import { NavLink } from "react-router-dom";
 const Products = () => {
   const [state, setstate] = useState([]);
   const [filter, setfilter] = useState([]);
   const [loading, setloading] = useState(false);
   console.log(state);
+
   const filterinf = (data) => {
     setloading(true);
     const Updatefilter = state.filter((x) => x.category === data);
     setfilter(Updatefilter);
   };
 
+  // const showing = (a) => {};
   useEffect(() => {
-    const req = async () => {
-      // setloading(false)
-      await fetch("https://fakestoreapi.com/products")
-        .then((response) => response.json())
-        .then((data) => {
-          setstate(data);
-        });
-    };
-    req();
+    fetch("https://fakestoreapi.com/products")
+      .then((response) => response.json())
+      .then((data) => {
+        setstate(data);
+      });
   }, []);
   console.log(state);
 
   return (
-    <div className="product">
+    <div className="products">
       <div className="main">
         <button className="btn" onClick={() => setloading(false)}>
           All
@@ -43,21 +41,25 @@ const Products = () => {
           women's clothing
         </button>
       </div>
-      <ul className="product-ul">
+      <ul className="products-ul">
         {!loading &&
           state.map((data) => (
-            <li className="product-li">
-              <img src={data.image} alt="" className="product-image" />
+            <li key={data.id} className="products-li">
+              <img src={data.image} alt="" className="products-image" />
               <p>{data.title}</p>
               <p>{data.price} $</p>
+              <button className="btn">
+                <NavLink to={`/products/${data.id}`}>Buy Now</NavLink>
+              </button>
             </li>
           ))}
         {loading &&
           filter.map((data) => (
-            <li className="product-li">
-              <img src={data.image} alt="" className="product-image" />
+            <li key={data.id} className="products-li">
+              <img src={data.image} alt="" className="products-image" />
               <p>{data.title}</p>
               <p>{data.price}$</p>
+              <button className="btn">Buy Now</button>
             </li>
           ))}
       </ul>
