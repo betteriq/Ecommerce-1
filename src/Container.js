@@ -5,7 +5,7 @@ const Container = (props) => {
   return (
     <div>
       <h1>Numbers {props.numbers}</h1>
-      <button onClick={()=>props.Reducer}>Click me</button>
+      <button onClick={props.AddtoCart}>Click me</button>
     </div>
   );
 };
@@ -18,7 +18,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    Reducer: () => dispatch(AddtoCart()),
+    AddtoCart: () => dispatch(AddtoCart()),
   };
 };
 
