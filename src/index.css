@@ -16,6 +16,12 @@
   top: 0;
   left: 0;
 }
+.about{
+  padding-top: 100px;
+  width: 100%;
+  margin: 0rem 20rem;
+  height: 100%;
+}
 .atn {
   padding: 0.5rem 2rem;
   text-decoration: none;
@@ -130,6 +136,9 @@ main > :first-child {
   flex-direction: row;
   justify-content: space-between;
   width: 70%;
+}
+.product-frist >*{
+  margin: 50px;
 }
 .product-second{
   display: flex;
