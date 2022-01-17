@@ -1,7 +1,9 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const data = useSelector((state) => state.numbers);
   return (
     <nav className="nav-main">
       <h1> Shop</h1>
@@ -21,7 +23,7 @@ const Navbar = () => {
       </div>
       <div className="nav-second">
         <button className="btn">Login</button>
-        <button className="btn">Cart</button>
+        <button className="btn">Cart-{data}</button>
       </div>
     </nav>
   );

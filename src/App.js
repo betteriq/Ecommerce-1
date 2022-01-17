@@ -4,18 +4,23 @@ import Products from "./components/Products";
 import Notfound from "./Notfound";
 import Home from "./Home";
 import Product from "./components/Product";
-import goo from "./goo";
+import About from "./components/About";
+import { Provider } from "react-redux";
+import store from "./components/AddtoCart/Create";
 function App() {
   return (
-    <div className="container">
-      <Navbar />
-      <Switch>
-        <Route path="/products" component={Products} />
-        <Route path="/products/1" component={goo} />
-        <Route path="/" component={Home} />
-        <Route component={Notfound} />
-      </Switch>
-    </div>
+    <Provider store={store}>
+      <div className="container">
+        <Navbar />
+        <Switch>
+          <Route path="/" component={Home} exact />
+          <Route path="/home" component={Home} exact />
+          <Route path="/products" component={Products} exact />
+          <Route path="/products/:id" component={Product} exact/>
+          <Route path="/about" component={About} exact/>
+        </Switch>
+      </div>
+    </Provider>
   );
 }
 

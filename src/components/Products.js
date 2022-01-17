@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { Exportet } from "./AddtoCart/AddtoCart";
+
+
 const Products = () => {
   const [state, setstate] = useState([]);
   const [filter, setfilter] = useState([]);
   const [loading, setloading] = useState(false);
   console.log(state);
-
+  const stater = useSelector(state => state.jat)
+  const dispatcher = useDispatch()
   const filterinf = (data) => {
     setloading(true);
     const Updatefilter = state.filter((x) => x.category === data);
@@ -18,6 +24,8 @@ const Products = () => {
       .then((response) => response.json())
       .then((data) => {
         setstate(data);
+        console.log("dataaaaaaaaaaaaa:", data);
+        dispatcher(Exportet(data))
       });
   }, []);
   console.log(state);
@@ -63,6 +71,7 @@ const Products = () => {
             </li>
           ))}
       </ul>
+      <button onClick={()=>console.log("hi",stater)}>lllllllllllll</button>
     </div>
   );
 };
